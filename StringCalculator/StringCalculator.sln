@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringCalculator", "StringCalculator\StringCalculator.csproj", "{9DF26BBF-507E-4C93-A021-FFA7887FCC40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringCalculator.Tests", "StringCalculator.Tests\StringCalculator.Tests.csproj", "{925C6EA5-BDEA-4313-A8A6-D92B71CB2CA5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DF26BBF-507E-4C93-A021-FFA7887FCC40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DF26BBF-507E-4C93-A021-FFA7887FCC40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DF26BBF-507E-4C93-A021-FFA7887FCC40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DF26BBF-507E-4C93-A021-FFA7887FCC40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{925C6EA5-BDEA-4313-A8A6-D92B71CB2CA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{925C6EA5-BDEA-4313-A8A6-D92B71CB2CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{925C6EA5-BDEA-4313-A8A6-D92B71CB2CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{925C6EA5-BDEA-4313-A8A6-D92B71CB2CA5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {665A1A0F-B39F-4359-AA5F-6E1AD752CF0B}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://halestormprojects.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = StringCalculator\\StringCalculator.csproj
+		SccProjectName1 = StringCalculator
+		SccLocalPath1 = StringCalculator
+		SccProjectUniqueName2 = StringCalculator.Tests\\StringCalculator.Tests.csproj
+		SccProjectName2 = StringCalculator.Tests
+		SccLocalPath2 = StringCalculator.Tests
+	EndGlobalSection
+EndGlobal
