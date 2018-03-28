@@ -14,27 +14,26 @@ namespace StringCalculator
 
         public string GetUserInput(string[] args)
         {
-            
-            if (args.Length > 0)
-            {
-                UserInputStr = StringCombine(args);
-            }
-            else
-            {
-                Console.WriteLine("Enter Your Numbers by a delimeter exluding single operators(*,/,+,-,^) (Please Press Q to quit)");
-                while(UserInputStr == null || !UserInputStr.ToLower().Equals("q"))
-                {
-                    UserInputStr = Console.ReadLine();
-                    if (UserInputStr != null && !UserInputStr.ToLower().Equals("q"))
-                    {
-                        UserInputList.Add(UserInputStr);
-                    }
-                }
+            UserInputStr = args.Length > 0 ? StringCombine(args) : GetInfoFromUser();
 
-                UserInputStr = StringCombine(UserInputList.ToArray());
-            }
-            
             return UserInputStr;
+        }
+
+
+        public string GetInfoFromUser()
+        {
+            Console.WriteLine("Enter Your Numbers by a delimeter exluding single operators(*,/,+,-,^) (Please Press Q to quit)");
+
+            while (UserInputStr == null || !UserInputStr.ToLower().Equals("q"))
+            {
+                UserInputStr = Console.ReadLine();
+                if (UserInputStr != null && !UserInputStr.ToLower().Equals("q"))
+                {
+                    UserInputList.Add(UserInputStr);
+                }
+            }
+
+            return StringCombine(UserInputList.ToArray());
         }
 
         /// <summary>
@@ -42,7 +41,7 @@ namespace StringCalculator
         /// </summary>
         /// <param name="strToJoin"></param>
         /// <returns>A combined string</returns>
-        internal string StringCombine(string[] strToJoin)
+        public string StringCombine(string[] strToJoin)
         {
             return string.Join(Environment.NewLine, strToJoin);
         }

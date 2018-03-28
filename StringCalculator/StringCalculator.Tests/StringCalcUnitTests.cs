@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace StringCalculator.Tests
@@ -10,9 +11,9 @@ namespace StringCalculator.Tests
         internal StringCalc StrCalc { get; set; } = new StringCalc();
 
         [TestMethod]
-        public void AssertEmptyStringIsZero()
+        public void AssertEmptyStrAndNegativeNumAndGreatherThanOneKIsZero()
         {
-            Numbers = "";
+            Numbers = $"{string.Empty}, 1001 {Environment.NewLine} 1002 % 3000,-1 ; -1000 % -5";
             Assert.AreEqual(StrCalc.AddStrings(Numbers), 0);
         }
 
@@ -47,18 +48,28 @@ namespace StringCalculator.Tests
             Assert.AreEqual(StrCalc.AddStrings(Numbers), 66);
         }
 
+        #region ExceptionTests
         [TestMethod]
-        public void AssertExceptionForNumbers_GreaterThanOneK()
+        public void ExceptionNegativeNumTest()
         {
-            Numbers = $"1001 {Environment.NewLine} 1002 % 3000";
-            Assert.AreEqual(StrCalc.AddStrings(Numbers),0);
+            Numbers = "-1";
+            StrCalc.AddStrings(Numbers);
+            Assert.IsNotNull(StrCalc.ExceptionList);
+            var exception = new NotSupportedException();
+            Assert.AreEqual(exception.GetType(), StrCalc.ExceptionList.First().GetType());
         }
 
         [TestMethod]
-        public void AssertExceptionForNumbers_LessThanZero()
+        public void ExceptionGreaterThanTest()
         {
-            Numbers = "-1 ; -1000 % -5";
-            Assert.AreEqual(StrCalc.AddStrings(Numbers),0);
+            Numbers = "1001";
+            StrCalc.AddStrings(Numbers);
+            Assert.IsNotNull(StrCalc.ExceptionList);
+            var exception = new NotSupportedException();
+            Assert.AreEqual(exception.GetType(), StrCalc.ExceptionList.First().GetType());
         }
+
+        #endregion
+
     }
 }
